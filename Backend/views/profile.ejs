@@ -2,9 +2,7 @@
 
   <div class="profile w-full h-screen bg-zinc-800 text-white">
 
-    <form action="/fileupload" id="uploadForm" method="POST"
-    enctype="multipart/form-data" 
-    hidden>
+    <form action="/fileupload" id="uploadForm" method="POST" enctype="multipart/form-data" hidden>
 
       <input type="file" name="image">
       <button type="submit">Upload</button>
@@ -13,8 +11,7 @@
 
     <div class="profdets flex flex-col items-center justify-center pt-20 space-y-3">
       <div class="relative">
-        <span
-          id="uploadIcon"
+        <span id="uploadIcon"
           class="absolute ml-20 mt-20 text-4xl text-white cursor-pointer rounded-full bg-black/50 p-2 hover:bg-black/70">
           <i class=" ri-edit-circle-line"></i>
         </span>
@@ -22,59 +19,47 @@
           <img class="object-cover" src="/images/uploads/<%= user.profileImage %>" alt="">
         </div>
       </div>
-      <h1 class="text-3xl font-semibold mt-3 mb-1"><%= user.username %></h1>
-      <h3 class=" text-md ">@<%= user.username %> </h3>
+      <h1 class="text-3xl font-semibold mt-3 mb-1">
+        <%= user.name %>
+      </h1>
+      <h3 class=" text-md ">@<%= user.username %>
+      </h3>
       <a href="/edit"
         class="px-7 py-2 bg-zinc-600 rounded-full mt-3 inline-block font-semibold text-white text-sm font-semibold">Edit
         Profile
 
       </a>
-      <button class="px-7 py-2 bg-red-600 rounded-lg mt-10 inline-block font-semibold text-white text-sm font-semibold">
-        Add New Post</button>
-      <div class="cards flex flex-wrap justify-center items-center mt-10 gap-5 px-10">
+      <a href="/add"
+        class="px-7 py-2 bg-red-600 rounded-lg mt-10 inline-block font-semibold text-white text-sm font-semibold">
+        Add New Post</a>
+      <div class="cards flex flex-wrap items-start mt-10 gap-5 px-10">
 
-        <div class="card ">
 
-          <div class="max-w-40 max-h-60 bg-zinc-700 rounded-xl overflow-hidden">
-            <img class="object-cover w-full h-full"
-              src="https://i.pinimg.com/1200x/4f/29/b2/4f29b295ea49e48b900d2c8170ce13f5.jpg" alt="">
-
-          </div>
-          <h3 class="text-xl font-semibold mt-3 ">All Pins</h3>
-          <h5 class="text-md font-medium opacity-50">28 Pins</h5>
-        </div>
-        <div class="card ">
-
-          <div class="max-w-40 max-h-60 bg-zinc-700 rounded-xl overflow-hidden">
-            <img class="object-cover w-full h-full"
-              src="https://i.pinimg.com/736x/c2/c7/d6/c2c7d64ce58f78448fa40bf158b9818a.jpg" alt="">
+        <div class="card">
+          <div class="w-40 h-50 bg-zinc-700 rounded-xl overflow-hidden  ">
+            <img class="object-cover w-full h-full" src="/images/uploads/<%= user?.posts[0]?.image %>" alt="">
 
           </div>
-          <h3 class="text-xl font-semibold mt-3 ">All Pins</h3>
-          <h5 class="text-md font-medium opacity-50">28 Pins</h5>
-        </div>
-        <div class="card ">
-
-          <div class="max-w-40 max-h-60 bg-zinc-700 rounded-xl overflow-hidden">
-            <img class="object-cover w-full h-full"
-              src="https://i.pinimg.com/1200x/1f/33/35/1f333586378b748f2b0876dce6fe7edd.jpg" alt="">
-
-          </div>
-          <h3 class="text-xl font-semibold mt-3 ">All Pins</h3>
-          <h5 class="text-md font-medium opacity-50">28 Pins</h5>
+          <a href="/show/posts" class="text-xl inline-block  font-semibold mt-3 ">
+            Your Uploaded Pins
+          </a>
+          <h5 class="text-md font-medium opacity-50">
+            <%= user?.posts.length %> Pins
+          </h5>
         </div>
 
 
-<script>
-document.querySelector('#uploadIcon').addEventListener('click', function() {
-  document.querySelector("#uploadForm input[type='file']").click();
-});
 
-document.querySelector("#uploadForm input[type='file']").addEventListener('change', function() {
-  document.querySelector("#uploadForm").submit();
-});
+        <script>
+          document.querySelector('#uploadIcon').addEventListener('click', function () {
+            document.querySelector("#uploadForm input[type='file']").click();
+          });
 
-</script>
+          document.querySelector("#uploadForm input[type='file']").addEventListener('change', function () {
+            document.querySelector("#uploadForm").submit();
+          });
+
+        </script>
 
 
         <% include ./partials/footer.ejs %>
