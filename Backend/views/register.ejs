@@ -1,9 +1,9 @@
 <% include ./partials/header.ejs %>
 <!-- this is register page  -->
 <div class="w-full h-screen bg-[url(https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-no-repeat bg-cover bg-center flex items-center justify-center">
-  <div class="w-[40vw] backdrop-blur-md  bg-blue/50 px-20 py-10 rounded-[30px]">
-    <h1 class="text-3xl text-center font-semibold capitalize tracking-tighter text-zinc-700 leading-none ">Create New Account.</h1>
-    <form action="">
+  <div class="w-[40vw] backdrop-blur-lg  bg-blue/50 px-20 py-10 rounded-[30px]">
+    <h1 class="text-3xl text-center font-semibold capitalize tracking-tighter text-zinc-700 leading-none mt-2 mb-7">Create New Account.</h1>
+    <form action="/register" method="POST">
       <input class=" border-2 rounded-[1vw] block mt-2 w-full px-3 py-2" type="text" name="username" placeholder="username">
       <input class=" border-2 rounded-[1vw] block mt-2 w-full px-3 py-2" type="email" name="email" placeholder="email">
       <input class=" border-2 rounded-[1vw] block mt-2 w-full px-3 py-2" type="number" name="contact" placeholder="contact No">
