@@ -1,8 +1,10 @@
 <% include ./partials/header.ejs %>
 <!-- this is register page  -->
-<div class="w-full min-h-screen bg-[url(https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-no-repeat bg-cover bg-center flex items-center justify-center px-4">
-  <div class="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] backdrop-blur-lg bg-blue/50 px-6 sm:px-10 py-10 rounded-2xl">
-    <h1 class="text-2xl sm:text-3xl text-center font-semibold capitalize tracking-tighter text-zinc-700 leading-none mt-2 mb-7">
+<div class="w-full min-h-screen bg-[url(https://images.unsplash.com/photo-1541701494587-cb58502866ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-no-repeat bg-cover bg-center flex items-center justify-center px-4
+sm:px-6 md:px-8 lg:px-12
+">
+  <div class="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-md p-6 sm:p-8 shadow-2xl bg-gray-800/10 backdrop-blur-2xl rounded-3xl">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl text-center font-semibold capitalize mt-2 mb-7 text-white">
       Create New Account.
     </h1>
 
@@ -17,8 +19,8 @@
 
       <p class="text-xs sm:text-sm font-semibold text-zinc-700 mt-7 text-center w-3/4 mx-auto">
         By continuing, you agree to Pinterest's 
-        <a class="text-blue-600" href="#">Terms of Service</a> and acknowledge you've read our 
-        <a class="text-blue-600" href="#">Privacy Policy</a>
+        <a class="text-blue-600" id="termsOfService">Terms of Service</a> and acknowledge you've read our 
+        <a class="text-blue-600" id="privacyPolicy">Privacy Policy</a>
       </p>
     </form>
 
@@ -27,5 +29,37 @@
     </a>
   </div>
 </div>
+
+<script>
+  document.getElementById("termsOfService").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    Toastify({
+      text: "terms of service feature is not implemented yet.",
+      duration: 3000,
+      gravity: "top",
+      position: "right",
+      close: true,
+      style: {
+        background: "linear-gradient(to right, #E91E63, #F44336)"
+      }
+    }).showToast();
+  });
+  document.getElementById("privacyPolicy").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    Toastify({
+      text: "privacy policy feature is not implemented yet.",
+      duration: 3000,
+      gravity: "top",
+      position: "right",
+      close: true,
+      style: {
+        background: "linear-gradient(to right, #E91E63, #F44336)"
+      }
+    }).showToast();
+  });
+  
+</script>
 
 <% include ./partials/footer.ejs %>
