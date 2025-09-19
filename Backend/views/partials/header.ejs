@@ -8,18 +8,44 @@
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="/stylesheets/style.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-</head>
-<body>
 
-  <% if(nav == true) { %>
-    <div class="w-full px-4 sm:px-10 py-5 flex flex-col sm:flex-row items-center sm:justify-between bg-zinc-800 text-white gap-3 sm:gap-0">
-      <h3 class="flex justify-center sm:justify-start">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" class="w-10 sm:w-10" alt="logo">
-      </h3>
-      <div class="flex flex-col sm:flex-row gap-2 sm:gap-5 items-center text-base sm:text-lg font-semibold text-center sm:text-left">
-        <a href="/profile" class="hover:text-red-500">Profile</a>
-        <a href="/feed" class="hover:text-red-500">Feed</a>
-        <a class="px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700" href="/logout">Logout</a>
-      </div>
-    </div>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body
+  class="h-screen min-h-screen overflow-hidden
+         bg-[url('https://images.unsplash.com/photo-1684139517679-032b7213ad2e?q=80&w=1228&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] 
+         bg-no-repeat bg-cover bg-center 
+         flex flex-col font-sans text-white">
+
+  <% if(nav==true) { %>
+  <header
+    class="w-[95%] sm:w-[90%] mx-auto mt-4 px-5 sm:px-10 py-4 flex flex-col sm:flex-row items-center sm:justify-between 
+           rounded-2xl shadow-xl backdrop-blur-xl bg-white/10 border border-white/20 transition hover:shadow-2xl">
+
+    <!-- Logo -->
+    <a href="/profile" class="flex items-center space-x-2">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png"
+        class="w-10 sm:w-12 drop-shadow" alt="logo">
+      <span class="text-xl sm:text-2xl font-bold tracking-tight">Postify</span>
+    </a>
+
+    <!-- Nav Links -->
+    <nav class="flex flex-col sm:flex-row gap-2 sm:gap-6 items-center mt-3 sm:mt-0 
+                text-base sm:text-lg font-medium">
+      <a href="/profile" class="hover:text-red-400 transition">Profile</a>
+      <a href="/feed" class="hover:text-red-400 transition">Feed</a>
+      <a href="/logout"
+        class="px-4 py-2 bg-red-600 rounded-full text-white shadow hover:bg-red-500 transition">
+        Logout
+      </a>
+    </nav>
+  </header>
   <% } %>
+
